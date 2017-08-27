@@ -22,7 +22,7 @@
 
 - (IBAction)startRecognizing:(id)sender {
     SFSpeechRecognizer *recognizer = [[SFSpeechRecognizer alloc] initWithLocale:[NSLocale localeWithLocaleIdentifier:@"zh_CN"]];
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"test.mp3" withExtension:nil];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"test.m4a" withExtension:nil];
     SFSpeechURLRecognitionRequest *request = [[SFSpeechURLRecognitionRequest alloc] initWithURL:url];
     [recognizer recognitionTaskWithRequest:request resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) {
         if (result.isFinal) {
