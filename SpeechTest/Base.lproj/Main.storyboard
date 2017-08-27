@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l8P-HE-r2a">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="开始识别" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oGz-eL-xm0">
+                                <rect key="frame" x="16" y="91" width="343" height="300"/>
+                                <color key="backgroundColor" red="1" green="0.93773872290000004" blue="0.80250667119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="JgF-rT-yIU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILp-hr-YbQ">
+                                <rect key="frame" x="137.5" y="441" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="M7g-D6-R34"/>
+                                    <constraint firstAttribute="height" constant="100" id="f9O-fW-FvV"/>
+                                </constraints>
+                                <state key="normal" title="录音"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oGz-eL-xm0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="CTb-mQ-uR5"/>
+                            <constraint firstItem="ILp-hr-YbQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ddr-eh-O1C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oGz-eL-xm0" secondAttribute="trailing" id="Hb4-jf-byA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="oGz-eL-xm0" secondAttribute="leading" id="Jfk-wm-whb"/>
+                            <constraint firstItem="oGz-eL-xm0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mbh-WC-QHq"/>
+                            <constraint firstItem="ILp-hr-YbQ" firstAttribute="top" secondItem="oGz-eL-xm0" secondAttribute="bottom" constant="50" id="jTY-m4-5os"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="esB-pb-M1K">
+                        <barButtonItem key="rightBarButtonItem" title="音频文件识别" id="Fyl-cB-QGk">
+                            <connections>
+                                <segue destination="4w1-j1-2Db" kind="show" id="MVg-1S-RpQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="recordButton" destination="ILp-hr-YbQ" id="vRX-I6-rEw"/>
+                        <outlet property="textView" destination="oGz-eL-xm0" id="Wqt-Q8-AJe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="122.78860569715144"/>
+        </scene>
+        <!--File Recognition View Controller-->
+        <scene sceneID="RRl-gT-bbb">
+            <objects>
+                <viewController id="4w1-j1-2Db" customClass="FileRecognitionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sth-Su-1cA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z3v-QC-T4o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rCx-EH-WAD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hb-9R-IqV">
+                                <rect key="frame" x="141.5" y="318.5" width="92" height="30"/>
+                                <state key="normal" title="音频文件识别"/>
+                                <connections>
+                                    <action selector="startRecognizing:" destination="4w1-j1-2Db" eventType="touchUpInside" id="OLc-WM-2da"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3hb-9R-IqV" firstAttribute="centerY" secondItem="rCx-EH-WAD" secondAttribute="centerY" id="Xfb-2e-0U8"/>
+                            <constraint firstItem="3hb-9R-IqV" firstAttribute="centerX" secondItem="rCx-EH-WAD" secondAttribute="centerX" id="nie-cf-XAr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mfh-kf-ZIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="123"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R2O-cv-NPM">
+            <objects>
+                <navigationController id="l8P-HE-r2a" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eFC-SY-J1t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nX4-UW-7sC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKh-IC-oJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-649" y="123"/>
+        </scene>
+    </scenes>
+</document>
